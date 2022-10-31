@@ -107,9 +107,12 @@ rule KALLISTO_QUANT:
 		fastq=expand(KALLISTO_FASTQ_FOLDER+"/{{sample}}{pair}.fastq.gz",pair=PAIR_SUFFIX),
 	output:
 		directory(OUTPUT_PATH+"/KALLISTO/{sample}")
+	log:
+		out=OUTPUT_PATH+"/log/KALLISTO_QUANT_{sample}.out",
+		err=OUTPUT_PATH+"/log/KALLISTO_QUANT_{sample}.err"
 	params: cpu = THREAD_PER_SAMPLE
 	shell: """
-	kallisto quant {OTHER_KALLISTO_ARGS} --threads={THREAD_PER_SAMPLE} --index={KALLISTO_INDEX} --output-dir={output} {input}
+	kallisto quant {OTHER_KALLISTO_ARGS} --threads={THREAD_PER_SAMPLE} --index={KALLISTO_INDEX} --output-dir={output} {input}  1> {log.out} 2> {log.err}
 	"""
 
 rule COUNTS_TABLE:
