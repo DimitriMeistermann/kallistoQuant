@@ -1,0 +1,13 @@
+{
+	"IS_PAIRED_END": true,
+	"READ_LENGTH" : 0,
+	"THREAD_PER_SAMPLE": 5,
+	"KALLISTO_INDEX": "/mnt/d/PostdocUnsync/Ressources/refForKallisto/transcriptome.idx",
+	"FASTQ_PATH": "/mnt/d/PostdocUnsync/workflows/kallisto_align/in",
+	"OUTPUT_PATH": "/mnt/d/PostdocUnsync/workflows/kallisto_align/out",
+	"PAIR_END_FILE_PATTERN":".R",
+	"FORWARD_ADAPTATOR":"",
+	"REVERSE_ADAPTATOR":"",
+	"CUTADAPT_MIN_READ_LEN":10,
+	"OTHER_KALLISTO_ARGS": ""
+}

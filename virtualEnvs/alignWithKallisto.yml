@@ -1,0 +1,14 @@
+name: kallisto_align
+channels:
+  - conda-forge
+  - bioconda
+dependencies:
+  - snakemake-minimal
+  - cutadapt
+  - fastqc
+  - multiqc
+  - kallisto
+  - pysam
+  - r-base
+  - r-data.table
+  
